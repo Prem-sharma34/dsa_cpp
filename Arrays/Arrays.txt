@@ -1,0 +1,50 @@
+Arrays
+In programming , we often encounter such situations, where need to
+store a collection of data
+
+An array is a collection of items of same data types stored at contiguous 
+memory locations.
+
+Types:
+
+1D array
+2D array
+Multi-Dimensional array
+
+
+1D Arrays:
+    . store elements
+    . accessed using an index
+
+    |1 | 2 | 3 | 4 | 5|
+Start from index = 0
+If 1 --> 0 
+Then nth --> n-1
+
+
+Declaration:
+    
+    int arr[5] = {1,3,4,8,8};
+
+This statment tell that, create a array of size 5 which is called arr 
+and store int type values
+
+Updating a specific element:
+
+arr[2] = 10;
+
+Then the new array will be: {1, 3,10,8,8}
+
+
+
+Traversal:
+It just looping over all the value of the array
+
+void printArray(int * arr, int n)
+{
+    int i;
+    cout<<"Array: ";
+    for(i = 0 ; i < n ; i++){
+        cout<<arr[i]<<" ";
+    }
+}
