@@ -1,14 +1,11 @@
 /* 
 Remove duplicate from sorted array:
 
-
 Order shouldn't be change 
 number of unique element 
 
-
 return unqiue element from the array nums 
 and also the modified new array with unique element 
-
 
 i have done nothing but check current ith index value and index value which is one before one , 
 and just put the unique element on front 
