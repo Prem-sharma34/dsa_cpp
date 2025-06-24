@@ -21,7 +21,7 @@ smallest number which is larger than k
 
 #include<iostream>
 
-int solve_bs(int a[] , int n , int k)
+int solve_bs(char a[] , int n , char k)
 {
     int l = 0;
     int r = n -1;
@@ -54,11 +54,11 @@ int solve_bs(int a[] , int n , int k)
 
 int main()
 {
-    int a[] = {1,4,4,5,8,9};
-    int k = 8;
+    char a[] = {'a','c','d','e'};
+    char k = 'b';
     int n = sizeof(a)/sizeof(a[0]);
 
-    int val = solve_bs(a,n,k);
+    char val = solve_bs(a,n,k);
 
     std::cout<< "The smallest element greater than "<<k<<" is "<<val;
 }
