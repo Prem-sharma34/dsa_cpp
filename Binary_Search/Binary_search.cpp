@@ -20,6 +20,9 @@ namespace h{
         std::cout<<"hello";
     }
 }
+
+
+
 int BinarySearch(std::vector<int>& a, int n, int k)
 {
     int s = 0;
@@ -47,7 +50,7 @@ int BinarySearch(std::vector<int>& a, int n, int k)
 
 int main()
 {
-    std::vector<int> a = {1, 2, 3, 4, 5, 6, 7};
+    std::vector<int> a = {1,     2, 3, 4, 5, 6, 7};
     int n = a.size();
     int k = 6;
 
