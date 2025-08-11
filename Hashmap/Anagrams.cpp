@@ -28,7 +28,7 @@ example:
 int main()
 {
     
-    std::string a[] = {"bbaa" , "aba" , "aadb" , "cab"};
+    std::string a[] = {"bbaa" , "aba" , "aadaaaaaaaaaaaaaaaab" , "cab"};
 
     std::unordered_map<std::string, std::vector<int>>m;
     // because we need to indeces of the all parts of the anagrams
