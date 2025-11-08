@@ -5,18 +5,13 @@ using namespace std;
 
 vector<int> rotateArray(vector<int>&nums, int k)
 {
+    int n = nums.size();
 
-    if(nums.size() >= 2)
-    {
-            // first reverse the arr
-        reverse(nums.begin() , nums.end());
+     k = k % n;
 
-        reverse(nums.begin() , nums.begin() + k);
-        reverse(nums.begin()+k , nums.end() );
-
-    }
-   
-   
+    reverse(nums.begin(), nums.end());
+    reverse(nums.begin(), nums.begin() + k);
+    reverse(nums.begin() + k, nums.end());
 
 
     return nums;
@@ -25,7 +20,7 @@ vector<int> rotateArray(vector<int>&nums, int k)
 
 int main()
 {
-    vector<int> nums = {-1};
+    vector<int> nums = {1,2,3,4,5,6,7};
 
     int k = 2;
     vector<int> newarr = rotateArray(nums , k);
