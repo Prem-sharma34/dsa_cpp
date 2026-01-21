@@ -1,2 +1,1 @@
-# DSA_in_Cpp
-This is repo will contain codes files related to dsa topic in c++
+# This Repo will have question solution related different dsa topic from leetcode and other important question.
