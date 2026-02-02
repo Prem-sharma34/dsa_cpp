@@ -6,29 +6,46 @@ using namespace std;
 
 bool canweplace(vector<int>&arr , int distance , int cows)
 {
+    int cntcows = 1 , last = arr[0];
 
+    for(int i = 1 ; i < arr.size() ; i++)
+    {
+        if(arr[i] - last >= distance)
+        {
+            cntcows++;
+            last = arr[i];
+        }
+
+        if(cntcows >= cows) return true;
+    }
+
+   
+    return false;
 
 }
 
 
-int aggressiveCows(vector<int> &arr, int k) 
+int aggressiveCows(vector<int> &arr, int cows) 
 {
     sort(arr.begin() , arr.end());
     int n = arr.size();
-    int low  = 0 , high = arr[n-1] - arr[0];
-
+    int low  = 1 , high = arr.back() - arr.front();
+    int result = 0;
     while(low <= high)
     {
-        int mid = low+high/2;
+        int mid =low+(high - low)/2;
 
-        if(canweplace(arr,mid,k) == true)
+        if(canweplace(arr,mid , cows)== true)
         {
-            
+            result = mid;
+            low = mid +1;
         }else
         {
-           
+            high = mid -1;
         }
     }
+
+    return result;
 }
 
 
