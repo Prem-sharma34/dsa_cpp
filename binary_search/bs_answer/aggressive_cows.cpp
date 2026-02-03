@@ -53,6 +53,6 @@ int aggressiveCows(vector<int> &arr, int cows)
 int main()
 {
     vector<int> arr = {0, 3, 4, 7, 10, 9};
-    int k =3;
+    int k =4;
     cout<<aggressiveCows(arr , k);
 }
