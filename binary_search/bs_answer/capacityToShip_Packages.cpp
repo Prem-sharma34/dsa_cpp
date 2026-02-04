@@ -4,7 +4,7 @@
 #include<numeric>
 
 using namespace std;
-
+// This is a helper function which is used to calclate weights for cows  
 int helperfn(vector<int>&weights , int cap)
 {
     int sum = 0;
