@@ -1,71 +1,56 @@
 #include<iostream>
-#include<vector>
+#include<vector> 
 #include<algorithm>
+#include<limits.h>
+using namespace std; 
 
-using namespace std;
-
-
-vector<int>merge(vector<int>&a , vector<int>&b)
-{
-  int n = a.size();
-  int m = b.size();
-  vector<int>temp;
-
-  int i = 0 , j = 0;
-  while(i < n && j < m)
-  {
-    if(a[i] <= b[j])
-    {
-      temp.push_back(a[i]);
-      i++;
-    }
-    else
-    {
-      temp.push_back(b[j]);
-      j++;
-    }
-
-  }
-
-  while(i < n){
-    temp.push_back(a[i]);
-    i++;
-  }
-
-  while(j<m)
-  {
-    temp.push_back(b[j]);
-    j++;
-  }
-
-  return temp;
-}
 
 int kthElement(vector<int> &a, vector<int>& b, int k)
 {
-  vector<int>arr = merge(a,b);
 
-  int low = 0 , high = *max_element(arr.begin() , arr.end());
+  int n = a.size();
+  int m = b.size();
 
+  if(n>m) 
+  {
+    return kthElement(b,a,k);
+  }
+
+  int low = max(0 , k-n) , high = n;
   while(low <= high)
   {
-    int mid = low + (high - low)/2;
+    int mid1 = (low + high)/2;
+    int mid2 = k - mid1;
+    cout<<"mid1: "<<mid1<<" mid2: "<<mid2<<endl;
 
-    if(mid == k) return arr[k-1];
-    else if(mid > k) high = mid -1;
-    else low = mid +1;
+
+    int l1 = INT_MIN , l2 = INT_MIN;
+    int r1 = INT_MAX , r2 = INT_MAX;
+
+    if(mid1 < n) r1 = a[mid1];
+    if(mid2 < m) r2 = b[mid2];
+
+    if(mid1 - 1 >= 0) l1 = a[mid1-1];    
+    if(mid2 - 1 >= 0) l2 = b[mid2-1];
+
+  
+    if(l1<= r2 && l2<=r1){
+      if((mid1 + mid2) == k) return max(l1 , l2);
+    } 
+    else if(l1 > r2) high = mid1 -1;
+    else low = mid1 +1;
   }
 
   return -1;
-  
+ 
 }
 
 
 int main()
 {
-  vector<int> a = {2, 3, 6, 7, 9};
-  vector<int> b = {1, 4, 8, 10};
-    int k = 5;
+  vector<int> a = {2,3,8,9};
+  vector<int> b = {4,5,6,7};
+    int k = 4;
 
   cout<<kthElement(a , b , k)<<endl;
 }
