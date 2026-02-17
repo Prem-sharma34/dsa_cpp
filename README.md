@@ -1,6 +1,6 @@
-# This Repo will have question solution related different dsa topic from leetcode and other important question.
+# This repo contain solution of the different problem according to topic.
 
-**`This repo will have problem solved on major pattern`**
+
 
 
 
