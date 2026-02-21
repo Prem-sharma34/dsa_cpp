@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 class Solution {
 public:
     string minWindow(string s, string t) {
@@ -20,7 +19,9 @@ public:
 
            while(r < n)
            {
+                // increase count 
                 if(hash[s[r]] > 0) cnt++;
+                // here we decrease the freq
                 hash[s[r]]--;
 
                 while(cnt == m)
@@ -31,7 +32,9 @@ public:
                         startindex = l;
                     }
 
+                    // here we decrease the freq
                     hash[s[l]]++;
+                    // increase the count
                     if(hash[s[l]] > 0) cnt--;
                     l++;
 
