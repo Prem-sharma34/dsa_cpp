@@ -65,7 +65,7 @@ void explainVector()
 
     }
 
-    for(auto it = v.begin(); it != v.end(); i++)
+    for(auto it = v.begin(); it != v.end(); it++)
     {
         cout<<*(it) << " ";
     }
