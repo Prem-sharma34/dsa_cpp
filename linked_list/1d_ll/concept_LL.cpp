@@ -70,6 +70,10 @@ int checkIfPresent(Node* head , int key)
     return false;
 }
 
+
+
+
+
 int main()
 {
     vector<int> arr = {2 , 5, 8 , 7};
@@ -87,8 +91,6 @@ int main()
     cout<<count<<endl;
 
     checkIfPresent(head,2)?cout<<"True"<<endl: cout<<false<<endl;
-
-
     
 }
 
