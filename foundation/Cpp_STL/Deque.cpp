@@ -6,7 +6,7 @@ using namespace std;
 void explainDeque()
 {
    deque<int>dq;
-   dq.push_back(1); // {1}
+   dq.push_back(1); // {1}  
 
    dq.emplace_back(2); // {1,2}
 
@@ -15,7 +15,7 @@ void explainDeque()
 
 
    dq.pop_back();
-   dq.pop_front();
+    
 
    dq.back();
 
