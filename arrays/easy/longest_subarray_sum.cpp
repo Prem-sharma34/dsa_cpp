@@ -24,7 +24,7 @@ int total_sub(vector<int>&nums , int k )
 
         if(sum == k)
         {
-            maxlen++;
+            maxlen = max(maxlen, right-left+1);
         }
 
         right++;
@@ -70,8 +70,8 @@ int subarr(vector<int>& arr , long long k)
 
 int main(){
 
-    vector<int> arr = {1,2,3};
+    vector<int> arr = {2,3,1,1,1,3,2};
     long long k = 3;
-    int len = subarr(arr , k);
+    int len = total_sub(arr , k);
    cout<< len<<endl;
 }
